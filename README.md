@@ -68,4 +68,4 @@ COPYRIGHT + LICENCE
 
 2009, Lindsay Holmwood <lindsay@holmwood.id.au>
 
-Distributed under the MIT Licence: http://www.opensource.org/licenses/mit-license.php
+Distributed under the MIT Licence: <http://www.opensource.org/licenses/mit-license.php>
