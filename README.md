@@ -28,12 +28,12 @@ to get this is by running:
 (facter collects facts about a system that Puppet can use)
 
 Next you'll need to specify the FQDN of the machine in 
-manifests/nodes/railsnode.pp. Substitute the FQDN into the node section. 
+`manifests/nodes/railsnode.pp`. Substitute the FQDN into the node section. 
 
-You might want to rename the railsnode.pp file to the hostname of the machine,
+You might want to rename the `railsnode.pp` file to the hostname of the machine,
 but it's personal preference. 
 
-Lastly, Rename the config/nodes/railsnode directory to the FQDN of the machine.
+Lastly, Rename the `config/nodes/railsnode` directory to the FQDN of the machine.
 
 Running Puppet
 --------------
@@ -44,7 +44,7 @@ do a small amount of lifting to get it going:
     sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp --tags ruby
     sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp
 
-(path to site.pp is relative to your current working directory)
+(path to `site.pp` is relative to your current working directory)
 
 We run with `--tags ruby` the first time so that `/etc/apt/sources.list` can be 
 modified, and apt can be updated. 
