@@ -1,20 +1,18 @@
+Rails Puppet Quickstarter
+=========================
 
-Installing and running Puppet against a single machine
-======================================================
+This is a really simple collection of Puppet **manifests to set up a single
+Ubuntu Hardy machine** with the necessary dependencies to run Rails. 
 
-This repo is a really simple collection of Puppet manifests to set up an
-Ubuntu Hardy machine with the necessary dependencies to run Rails. 
-
-It uses mod\_passenger with apache2 to serve Rails, Postfix for mail serving, 
-and collectd for performance monitoring. 
+It uses mod\_passenger with apache2 to serve Rails, Postfix for mailing, and
+collectd for performance monitoring. 
 
 It's intended that Puppet is run against these manifests locally, negating
 the need for a Puppetmaster. That said, the manifests should work in a 
-Puppet/Puppetmaster setup with little alteration. 
+Puppet/Puppetmaster setup with minimal alteration. 
 
-
-Installing Puppet on machine to manage
---------------------------------------
+Installing Puppet on machine
+----------------------------
 
     sudo aptitude install puppet git-core
     git clone git://github.com/auxesis/rails-puppet-quickstart.git  
@@ -48,12 +46,26 @@ do a small amount of lifting to get it going:
 
 (path to site.pp is relative to your current working directory)
 
-We run with `--tags ruby` the first time so that /etc/apt/source.list can be 
+We run with `--tags ruby` the first time so that `/etc/apt/sources.list` can be 
 modified, and apt can be updated. 
 
 Everything should be hunky-doory after that, so we run without any `--tags` option. 
 
 If you make any changes, just run the second command again: 
     
-		sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp
+    sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp
 
+
+TODO
+====
+ * create class structure for managing multiple apache vhosts
+ * include example passenger config
+ * manage /etc/apt/sources.list properly
+ * include fastcgi + apache + php config
+
+COPYRIGHT + LICENCE
+===================
+
+2009, Lindsay Holmwood <lindsay@holmwood.id.au>
+
+Distributed under the MIT Licence: http://www.opensource.org/licenses/mit-license.php
