@@ -1,0 +1,54 @@
+# Config file for collectd(1).
+# Please read collectd.conf(5) for a list of options.
+# http://collectd.org/
+#
+
+Hostname    "<%= fqdn %>"
+BaseDir     "/var/lib/collectd"
+PIDFile     "/var/run/collectd.pid"
+PluginDir   "/usr/lib/collectd"
+TypesDB     "/usr/lib/collectd/types.db"
+Interval     30
+ReadThreads  5
+Include     "/etc/collectd/includes/*.conf"
+
+LoadPlugin cpu
+LoadPlugin df
+LoadPlugin disk
+LoadPlugin dns
+LoadPlugin interface
+LoadPlugin irq
+LoadPlugin load
+LoadPlugin memory
+LoadPlugin rrdtool
+LoadPlugin swap
+LoadPlugin syslog
+LoadPlugin tcpconns
+LoadPlugin users
+
+<Plugin df>
+	MountPoint "/"
+</Plugin>
+
+<Plugin dns>
+	Interface "eth0"
+</Plugin>
+
+<Plugin interface>
+	Interface "eth0"
+</Plugin>
+
+<Plugin rrdtool>
+	DataDir "/var/lib/collectd/rrd"
+	CacheTimeout 120
+	CacheFlush   900
+</Plugin>
+
+<Plugin syslog>
+	LogLevel info
+</Plugin>
+
+<Plugin tcpconns>
+	ListeningPorts true
+</Plugin>
+

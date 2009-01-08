@@ -40,4 +40,20 @@ Lastly, Rename the config/nodes/railsnode directory to the FQDN of the machine.
 Running Puppet
 --------------
 
+Because we're not using Puppet in an end-to-end provisioning setup, we have to 
+do a small amount of lifting to get it going: 
+
+    sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp --tags ruby
     sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp
+
+(path to site.pp is relative to your current working directory)
+
+We run with '--tags ruby' the first time so that /etc/apt/source.list can be 
+modified, and apt can be updated. 
+
+Everything should be hunky-doory after that, so we run without any '--tags' option. 
+
+If you make any changes, just run the second command again: 
+    
+		sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp
+
