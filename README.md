@@ -14,8 +14,8 @@ Puppet/Puppetmaster setup with minimal alteration.
 Installing Puppet on machine
 ----------------------------
 
-    sudo aptitude install puppet git-core
-    git clone git://github.com/auxesis/rails-puppet-quickstart.git  
+    $ sudo aptitude install puppet git-core
+    $ git clone git://github.com/auxesis/rails-puppet-quickstart.git  
 
 Describing your machine
 -----------------------
@@ -41,8 +41,8 @@ Running Puppet
 Because we're not using Puppet in an end-to-end provisioning setup, we have to 
 do a small amount of lifting to get it going: 
 
-    sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp --tags ruby
-    sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp
+    $ sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp --tags ruby
+    $ sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp
 
 (path to `site.pp` is relative to your current working directory)
 
@@ -53,7 +53,7 @@ Everything should be hunky-doory after that, so we run without any `--tags` opti
 
 If you make any changes, just run the second command again: 
     
-    sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp
+    $ sudo puppet --debug --verbose rails-puppet-quickstart/puppet/manifests/site.pp
 
 
 TODO
